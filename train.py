@@ -1,3 +1,5 @@
+# -*- coding: latin-1 -*-
+
 import re
 import sys
 
@@ -14,7 +16,7 @@ while True:
     next_number = '{0:0{width}}'.format(file_num_ham, width=5)
 
     try:
-        with open(f'train/train-ham-{next_number}.txt', 'r') as f:
+        with open(f'train/train-ham-{next_number}.txt', 'r', encoding='latin-1') as f:
 
             content = f.read().lower()
             raw_tokens = re.split('[^a-zA-Z]', content)
@@ -37,7 +39,7 @@ while True:
     next_number = '{0:0{width}}'.format(file_num_spam, width=5)
 
     try:
-        with open(f'train/train-spam-{next_number}.txt', 'r') as f:
+        with open(f'train/train-spam-{next_number}.txt', 'r', encoding='latin-1') as f:
 
             content = f.read().lower()
             raw_tokens = re.split('[^a-zA-Z]', content)
@@ -90,3 +92,4 @@ with open('model.txt', 'w') as f:
         vocab_counter += 1
 
         f.write(f'{vocab_counter}  {string}')
+
