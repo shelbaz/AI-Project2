@@ -131,6 +131,8 @@ while True:
 
 print('Done processing the spams.')
 
-with open('classifier.txt', 'w') as myfile:
+with open('baseline-result.txt', 'w') as myfile:
     for line in final_file:
         myfile.write(f'{line}')
+
+
